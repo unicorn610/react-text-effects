@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular Text</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text">TEXT EFFECTS . CIRCULAR TEXT .&nbsp;</div>
+    </div>
+    <script type="text/javascript">
+      const CircularText = {
+        init: (el, str) => {
+          const elem = document.querySelector(el);
+          const text = str ? str : elem.innerText;
+          elem.innerHTML = "";
+          for (let i = 0; i < text.length; i++) {
+            let span = document.createElement("span"),
+              node = document.createTextNode(text[i]);
+            var r = (360 / text.length) * i;
+            var x = (Math.PI / text.length).toFixed(0) * i;
+            var y = (Math.PI / text.length).toFixed(0) * i;
+            console.log(r, x, y);
+            let styleTransform = `rotateZ(${r}deg) translate3d(${x}px,${y}px,0)`;
+            console.log(styleTransform);
+            console.log(
+              "rotateZ(" + r + "deg) translate3d(" + x + "px," + y + "px,0)"
+            );
+            span.appendChild(node);
+            span.style.webkitTransform = styleTransform;
+            span.style.transform = styleTransform;
+            elem.appendChild(span);
+          }
+        },
+      };
+      CircularText.init(".text");
+    </script>
+  </body>
+</html>

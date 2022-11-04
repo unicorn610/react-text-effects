@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fffcec;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  position: relative;
+  width: 50vh;
+  height: 50vh;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #003a6f;
+  text-align: center;
+  transform: rotate(30deg);
+}
+
+.text span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  font-size: 5vh;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+}
